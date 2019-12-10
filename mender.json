@@ -1,0 +1,37 @@
+[{
+	"name": "opsdis.com",
+	"relationships": [],
+	"hostgroups": ["linux-servers", "dc2"],
+	"notes": "",
+	"contact_groups": ["game"],
+	"alias": "opsdis",
+	"tags": [{
+			"environment": "production"
+		},
+		{
+			"localtion": "sthlm"
+		}
+	],
+	"services": [{
+		"service_description": "ping my server",
+		"check_period": "24x7",
+		"check_command": "check_ping",
+		"check_command_args": "100!300",
+		"display_name": "ping opsdis",
+		"notes": "Ping google and is alive",
+		"notifications_enabled": 1,
+		"retry_interval": 1,
+		"contact_groups": "game",
+		"is_volatile": 0,
+		"servicegroups": "ping,gameit",
+		"passive_checks_enabled": 1,
+		"check_interval": 1,
+		"max_check_attempts": 5,
+		"flap_detection_enabled": 0,
+		"active_checks_enabled": 1,
+		"tags": [{
+			"prio": 1
+		}]
+	}]
+
+}]
